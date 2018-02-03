@@ -45,7 +45,7 @@ class MiniController extends Controller
                 'userinfo' => $wechatFans
             ];
         }
-
+        return ['token'=>$token,'msg'=>var_dump(Cache::has($token))];
        
         return response(['message' => 'token异常'], Response::HTTP_UNAUTHORIZED);
 
