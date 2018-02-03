@@ -34,7 +34,7 @@ class MiniController extends Controller
     {
         // $token = $request -> header('token');
         $token = $request->header('token');
-        return response(['msg'=>$token]);
+        // return response(['msg'=>$token]);
         if(Cache::has($token)){
             $cache = Cache::get($token);
             $wechatFans = $this->wechatFans->syncFans($cache['openid'],(object)$request->userInfo);
