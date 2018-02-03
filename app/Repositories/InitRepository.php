@@ -9,7 +9,7 @@ namespace App\Repositories;
 class InitRepository// implements HouseRepositoryInterface
 {
     
-    public function response($data,$msg="success",$code='200'){
+    public function success($data,$msg="success",$code='200'){
         return [
             'data'=>$data,
             'message'=>$msg,

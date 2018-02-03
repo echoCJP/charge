@@ -16,6 +16,6 @@ class TestController extends Controller
     
 
     public function index(Request $request){
-        return $this->init->response('hehe');
+        return $this->init->success('hehe');
     }
 }
