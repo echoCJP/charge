@@ -23,7 +23,7 @@ class WechatFansRepository
         }
 
         $fans->sex = $data->gender;
-        $fans->headimgurl = $data->avatarUrl;
+        $fans->avatar = $data->avatarUrl;
         $fans->nickname = $data->nickName;
         $fans->country = $data->country;
         $fans->language = $data->language;

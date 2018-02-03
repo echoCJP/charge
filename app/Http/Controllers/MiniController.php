@@ -26,7 +26,7 @@ class MiniController extends Controller
         $session = $mini->auth->session($request->code);
         $token = substr(sha1(rand(1,9999999)), 0,16);
         Cache::put($token,$session,60);//config('cache.expired.auth')
-        return ['token'=>$token,'session'=>$session,'cache'=>config('cache.expired.auth')];
+        // return ['token'=>$token,'session'=>$session,'cache'=>config('cache.expired.auth')];
         return ['token'=>$token];
     }
 
@@ -34,7 +34,6 @@ class MiniController extends Controller
     public function syncUser(Request $request)
     {
         $token = $request->header('token');
-        // return ['token'=>$token,'msg'=>var_dump(Cache::has($token))];
         if(Cache::has($token)){
             $cache = Cache::get($token);
             $wechatFans = $this->wechatFans->syncFans($cache['openid'],(object)$request->userInfo);
@@ -46,8 +45,7 @@ class MiniController extends Controller
                 'userinfo' => $wechatFans
             ];
         }
-        // return ['token'=>$token,'msg'=>var_dump(Cache::has($token))];
-       
+      
         return response(['message' => 'token异常'], Response::HTTP_UNAUTHORIZED);
 
 
