@@ -22,7 +22,7 @@ class MiniController extends Controller
     // 同步用户session 
     public function getSession(Request $request)
     {
-        var_dump(config('cache.expired.auth'));exit;
+        var_dump(config('cache.stores.apc.driver'));exit;
         $mini = EasyWeChat::miniProgram();
         $session = $mini->auth->session($request->code);
         $token = substr(sha1(rand(1,9999999)), 0,16);
