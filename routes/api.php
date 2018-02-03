@@ -18,6 +18,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 Route::get('/mini/session', 'MiniController@getSession');
+Route::post('/mini/syncuser', 'MiniController@syncUser');
+
 Route::get('/test','TestController@index');//,['test','哈哈哈']
 
 
