@@ -25,6 +25,7 @@ class MiniController extends Controller
         $mini = EasyWeChat::miniProgram();
         $session = $mini->auth->session($request->code);
         $token = substr(sha1(rand(1,9999999)), 0,16);
+        return ['token'=>$token,'session'=>$session,'cache'=>config('cache.expired.auth')];
         Cache::put($token,$session,config('cache.expired.auth'));
         return ['token'=>$token];
     }
