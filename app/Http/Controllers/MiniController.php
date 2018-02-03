@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Repositories\WechatFansRepository;
+use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use EasyWeChat;
