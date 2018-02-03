@@ -37,6 +37,16 @@ class MiniController extends Controller
             $cache = Cache::get($token);
             $wechatFans = $this->wechatFans->syncFans($cache['openid'],(object)$request->userInfo);
             $cache['userInfo'] = $wechatFans;
+            
+            Cache::put($token, $cache, config('cache.expired.auth'));
+            return [
+                'message' => 'ok',
+                'userinfo' => $wechatFans
+            ];
         }
+
+        return response(['message' => 'token不存在或者已经过期'], Response::HTTP_UNAUTHORIZED);
+
+
     }
 }
