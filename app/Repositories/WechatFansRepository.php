@@ -2,6 +2,7 @@
 
 namespace App\Repositories;
 
+
 use App\Models\WechatFans;
 
 
@@ -18,7 +19,7 @@ class WechatFansRepository
         if(!$fans){
             $fans = new WechatFans();
             $fans -> openid = $openid;
-            // $fans -> subscribe_at = date('Y-m-d H:i:s');
+            $fans -> subscribe_at = date('Y-m-d H:i:s');
         }
 
         $fans->sex = $data->gender;
