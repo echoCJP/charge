@@ -33,7 +33,6 @@ class MiniController extends Controller
     public function syncUser(Request $request)
     {
         $token = $request->header('token');
-        Cache::put($token);
         // return ['token'=>$token,'msg'=>var_dump(Cache::has($token))];
         if(Cache::has($token)){
             $cache = Cache::get($token);
