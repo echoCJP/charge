@@ -16,6 +16,7 @@ class TestController extends Controller
     
 
     public function index(Request $request){
+        var_dump(config('cache.expired.auth'));
         return $this->init->success('hehe');
     }
 }
