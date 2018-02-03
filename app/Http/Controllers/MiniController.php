@@ -46,7 +46,7 @@ class MiniController extends Controller
             ];
         }
 
-        return response(['message' => 'token不存在或者已经过期'], Response::HTTP_UNAUTHORIZED);
+        return response(['message' => 'token异常'], Response::HTTP_UNAUTHORIZED);
 
 
     }
