@@ -16,7 +16,7 @@ class InitRepository// implements HouseRepositoryInterface
             'code'=>$code
         ];
         die();
-    }
+    } 
 
 
 }

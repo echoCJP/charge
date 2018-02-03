@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Repositories\WechatFansRepository;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use EasyWeChat;
