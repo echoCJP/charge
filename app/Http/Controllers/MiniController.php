@@ -32,7 +32,8 @@ class MiniController extends Controller
     // 同步用户数据
     public function syncUser(Request $request)
     {
-        $token = $request -> header('token');
+        // $token = $request -> header('token');
+        $token = $request->header('token');
         return response(['msg'=>$token]);
         if(Cache::has($token)){
             $cache = Cache::get($token);
