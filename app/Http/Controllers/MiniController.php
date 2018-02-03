@@ -35,22 +35,11 @@ class MiniController extends Controller
         // $token = $request -> header('token');
         $token = $request->header('token');
         // return response(['msg'=>$token]);
-        // if(Cache::has($token)){
-        //     $cache = Cache::get($token);
-        //     $wechatFans = $this->wechatFans->syncFans($cache['openid'],(object)$request->userInfo);
-        //     $cache['userInfo'] = $wechatFans;
-            
-        //     Cache::put($token, $cache, config('cache.expired.auth'));
-        //     return [
-        //         'message' => 'ok',
-        //         'userinfo' => $wechatFans
-        //     ];
-        // }
-
-        if (Cache::has($token)) {
+        if(Cache::has($token)){
             $cache = Cache::get($token);
             $wechatFans = $this->wechatFans->syncFans($cache['openid'],(object)$request->userInfo);
             $cache['userInfo'] = $wechatFans;
+            
             Cache::put($token, $cache, config('cache.expired.auth'));
             return [
                 'message' => 'ok',
@@ -58,7 +47,7 @@ class MiniController extends Controller
             ];
         }
 
-
+       
         return response(['message' => 'token异常'], Response::HTTP_UNAUTHORIZED);
 
 

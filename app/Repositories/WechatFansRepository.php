@@ -30,5 +30,6 @@ class WechatFansRepository
         $fans->city = $data->city;
         $fans->save();
         
+        return $fans;
     }
 }
