@@ -22,6 +22,7 @@ class MiniController extends Controller
     public function getSession(Request $request)
     {
         $mini = EasyWeChat::miniProgram();
+        return ['mini'=>$mini,'code'=>$request->code];
         var_dump($mini);exit;
         $session = $mini->auth->session($request->code);
         $token = substr(sha1(rand(1,9999999)), 0,16);
