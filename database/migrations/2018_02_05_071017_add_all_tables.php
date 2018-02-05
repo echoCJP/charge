@@ -21,7 +21,6 @@ class AddAllTables extends Migration
             $table->string('cover')->nullable()->comment('封面/样式');
             $table->tinyInteger('is_enable')->default(1)->comment('0-禁用 1-开启');
             $table->integer('sort')->default(100)->comment('排序，从大到小');
-            $table->engine = 'MyISAM';
             $table->timestamps();
         });
 
@@ -38,7 +37,6 @@ class AddAllTables extends Migration
             $table->char('month',2)->default(0)->comment('月');   
             $table->index('year');
             $table->index('month'); 
-            $table->engine = 'MyISAM';
             $table->timestamps();
         });
 
@@ -49,7 +47,6 @@ class AddAllTables extends Migration
             $table->text('value')->comment('value');
             $table->tinyInteger('is_enable')->default(1)->comment('0-禁用 1-开启');
             $table->integer('sort')->default(0)->comment('排序');
-            $table->engine = 'MyISAM';
         });
 
         // 用户表
