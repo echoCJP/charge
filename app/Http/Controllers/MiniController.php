@@ -25,7 +25,7 @@ class MiniController extends Controller
         $mini = EasyWeChat::miniProgram();
         $session = $mini->auth->session($request->code);
         $token = substr(sha1(rand(1,9999999)), 0,16);
-        Cache::put($token,$session,60);//config('cache.expired.auth')
+        Cache::put($token,$session,config('cache.expired.auth'));
         return ['token'=>$token];
     }
 
@@ -38,7 +38,7 @@ class MiniController extends Controller
             $wechatFans = $this->wechatFans->syncFans($cache['openid'],(object)$request->userInfo);
             $cache['userInfo'] = $wechatFans;
             
-            Cache::put($token, $cache,60);// config('cache.expired.auth')
+            Cache::put($token, $cache,config('cache.expired.auth'));
             return [
                 'message' => 'ok',
                 'userinfo' => $wechatFans
