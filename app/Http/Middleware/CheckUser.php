@@ -25,7 +25,7 @@ class CheckUser
             if(Cache::has($token)){
                 $cache = Cache::get($token);
                 if(!isset($cache['userInfo'])){
-                    cache['userInfo']=WechatFans::where('openid',$cache['openid'])->first();
+                    $cache['userInfo']=WechatFans::where('openid',$cache['openid'])->first();
                 }
             }
 

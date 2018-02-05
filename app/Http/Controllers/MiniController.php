@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 use EasyWeChat;
 
 /**
-* 
+* 小程序
 */
 class MiniController extends Controller
 {
