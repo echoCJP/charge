@@ -28,6 +28,7 @@ class AddAllTables extends Migration
         // 记账记录表
         Schema::create('money_log', function (Blueprint $table) {
             $table->increments('id');
+            $table->integer('user_id')->unsigned();
             $table->foreign('user_id')->references('id')->on('user')->comment('用户ID');
             $table->tinyInteger('type')->default(0)->comment('类型');
             $table->float('cost',10,2)->default(0.00)->comment('金额');
