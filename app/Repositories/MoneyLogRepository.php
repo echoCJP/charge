@@ -83,29 +83,20 @@ class MoneyLogRepository extends InitRepository
             $this -> serverError('时间无效');
         }
 
-// return $year;
 
-//         // $now_month = date('m',time());
-$data = MoneyLog::where([
-                        ['user_id',$user_id],
-                        ['soft_del',0],
-                        ['year',$year],
-                        ['month',$month]
-                    ])->get();
-
-return $data;
         $where = [
             ['user_id',$user_id],
             ['soft_del',0],
             ['year',$year],
             ['month',$month]
         ];
-        return $where;
+       
         // $data = MoneyLog::where($where) -> groupBy('day') -> get();
         $data = DB::table('money_log')
             ->where($where) 
-            // ->groupBy('day') 
-            // ->having('day', '>', 0)
+            // ->orderBy('created_at', 'desc')
+            ->groupBy('day') 
+            ->having('day', '>', 0)
             ->get();
 
         return $data;
