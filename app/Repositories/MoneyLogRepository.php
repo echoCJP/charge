@@ -96,7 +96,7 @@ class MoneyLogRepository extends InitRepository
             ->where($where) 
             ->orderBy('day', 'desc')
             ->groupBy('day') 
-            // ->having('day', '>', 0)
+            ->having('day', '>', 0)
             ->get();
 
         return $data;
