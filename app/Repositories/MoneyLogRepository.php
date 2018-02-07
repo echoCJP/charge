@@ -93,7 +93,7 @@ class MoneyLogRepository extends InitRepository
        
         // every_day
         $all_day = MoneyLog::select(['day','week','month','year'])
-            ->orderBy('day','')
+            ->orderBy('day')
             ->where($where) 
             ->groupBy('day')
             ->get();
