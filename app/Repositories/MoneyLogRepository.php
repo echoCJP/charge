@@ -91,22 +91,51 @@ class MoneyLogRepository extends InitRepository
             ['month',$month]
         ];
        
-        // $data = MoneyLog::where($where) -> groupBy('day') -> get();
-        $data = DB::table('money_log')
+        // every_day
+        $all_day = MoneyLog::select(['day','week','month','year'])
+            ->orderBy('day','')
             ->where($where) 
-            // ->groupBy('day') 
-            // ->having('day', '>', 0)
+            ->groupBy('day')
             ->get();
+      
+        $data = [];
+        foreach ($all_day as $k => $v) {
+            $field = ['money_log.id','money_log.cost','money_log.type'];
+            $cost_where = $where;
+            $cost_where['type'] = 0;
+            $cost_where['day'] = $v->day;
 
-        return $data;
-        // Order By, Group By, 和 Having
-        // $users = DB::table('users')
-        //       ->orderBy('name', 'desc')
-        //       ->groupBy('count')
-        //       ->having('count', '>', 100)
-        //       ->get();
+            $data[$k]['year'] = $v->year;
+            $data[$k]['month'] = $v->month;
+            $data[$k]['day'] = $v->day;
+            $data[$k]['week'] = $v->week;
 
+            // 消费
+            $cost_list = MoneyLog::where($cost_where) 
+                ->orderBy('money_log.created_at','desc') 
+                ->select($field) 
+                ->get();
+            $data[$k]['day_cost_sum'] = MoneyLog::where($cost_where)->sum('cost');
+            $data[$k]['cost'] = $cost_list;
+            // 收入
+            $income_where = $cost_where;
+            $income_where['type'] = 1;
+            $income_list = MoneyLog::where($income_where) 
+                ->orderBy('money_log.created_at','desc') 
+                ->select($field) 
+                ->get();
+            $data[$k]['income'] = $income_list;
+            $data[$k]['day_imcome_sum'] = MoneyLog::where($income_where)->sum('cost');
 
+            
+
+        }
+        if($data){
+            return $data;
+        }
+        $this->badRequest('数据为空');
+
+        
     }
 
     public function getCounts($user_id,$year,$month)

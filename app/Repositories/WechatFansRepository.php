@@ -4,6 +4,7 @@ namespace App\Repositories;
 
 
 use App\Models\WechatFans;
+use App\Models\User;
 
 
 /**
@@ -16,10 +17,20 @@ class WechatFansRepository
     public function syncFans($openid,$data)
     {
         $fans = WechatFans::where('openid',$openid)->first();
+        
         if(!$fans){
             $fans = new WechatFans();
             $fans -> openid = $openid;
             $fans -> subscribe_at = date('Y-m-d H:i:s');
+
+            // 更新用户
+            $user = new User();
+            $user->wechat_id = $fans->id;
+            $user->name = $data->nickName;
+            $user->avatar = $data->avatarUrl;
+            $user->sex = $data->gender;
+            $user->budget = 0;
+            $user->save();
         }
 
         $fans->sex = $data->gender;
@@ -30,6 +41,8 @@ class WechatFansRepository
         $fans->province = $data->province;
         $fans->city = $data->city;
         $fans->save();
+
+
         
         return $fans;
     }
