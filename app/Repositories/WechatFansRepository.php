@@ -33,7 +33,8 @@ class WechatFansRepository
         $fans->city = $data->city;
         $fans->save();
 
-        if(!$fans){
+        $user = User::where('wechat_id',$fans->id)->first();
+        if(!$user){
             // 更新用户
             $user = new User();
             $user->wechat_id = $fans->id;
