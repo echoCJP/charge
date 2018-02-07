@@ -20,6 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::get('/bill/consume', 'MoneyLogController@consume');//记账
 Route::get('/bill/counts', 'MoneyLogController@counts');//统计
 Route::get('/bill/lists', 'MoneyLogController@lists');//列表
+Route::get('/bill/setting', 'MoneyLogController@setting');//设置
 
 
 /*需要用户授权接口*/

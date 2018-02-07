@@ -50,5 +50,14 @@ class MoneyLogController extends Controller
         return $todo;
     }
 
+    // 设置预算
+    public function setting(Request $request){
+        $user_id = $request->user_id;   
+        $budget = $request->budget; 
+
+        $todo = $this->moneylog->settingBudget($user_id,$budget);
+        return $todo;
+    }
+
     
 }

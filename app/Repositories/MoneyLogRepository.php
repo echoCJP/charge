@@ -179,4 +179,25 @@ class MoneyLogRepository extends InitRepository
 
         return $data;
     }
+
+    public function settingBudget($user_id,$budget)
+    {
+        // 验证
+        if(!($user_id>0)){
+            $this -> serverError('用户出错');
+        }
+
+        if(!($budget>0)){
+            $this -> badRequest('请输入合理预算');
+        }
+
+        $res = User::where('id',$user_id)
+          ->update(['budget' => $budget]);
+
+        if($res){
+            return $this->successRequest('操作成功');
+        }
+
+        $this->badRequest('操作失败');
+    }
 }
