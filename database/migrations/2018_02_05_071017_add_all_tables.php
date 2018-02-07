@@ -35,9 +35,12 @@ class AddAllTables extends Migration
             $table->tinyInteger('cost_type')->default(0)->comment('消费类型：0-负（消费） 1-正（收入）');
             $table->tinyInteger('soft_del')->default(0)->comment('0-未删除 1-已删除');
             $table->char('year',4)->default(0)->comment('年');
-            $table->char('month',2)->default(0)->comment('月');   
+            $table->tinyInteger('month')->default(0)->comment('月');   
+            $table->tinyInteger('day')->default(0)->comment('日');    
+            $table->tinyInteger('week')->comment('周日-六 0-6');    
             $table->index('year');
             $table->index('month'); 
+            $table->index('day'); 
             $table->engine = 'MyISAM';
             $table->timestamps();
         });

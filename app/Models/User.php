@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-
 /**
-* 账单记录
+* 用户
 */
-class MoneyLog extends Model
+class User extends Model
 {
-    protected $table = 'money_log';
+    protected $table = 'user';
     
 }
