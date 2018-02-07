@@ -45,8 +45,6 @@ class WechatFansRepository
             $user->save();
         }
 
-
-        
         return $fans;
     }
 }

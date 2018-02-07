@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Cache;
 use Illuminate\Http\Request;
 use EasyWeChat;
 
+use App\Models\User;
+
 /**
 * 小程序
 */
@@ -36,12 +38,17 @@ class MiniController extends Controller
         if(Cache::has($token)){
             $cache = Cache::get($token);
             $wechatFans = $this->wechatFans->syncFans($cache['openid'],(object)$request->userInfo);
-            $cache['userInfo'] = $wechatFans;
+            $cache['wechat'] = $wechatFans;
+
+            if($wechatFans){
+                $userInfo = User::where('wechat_id',$wechatFans->id) -> first();
+            }
             
             Cache::put($token, $cache,config('cache.expired.auth'));
             return [
                 'message' => 'ok',
-                'userinfo' => $wechatFans
+                'wechat' => $wechatFans,
+                'userInfo' =>$userInfo?$userInfo:''
             ];
         }
       
