@@ -15,7 +15,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 class MoneyLogRepository extends InitRepository
 {
 
-    // test
+    // test123
     public function doConsume($user_id,$cate_id,$type,$cost,$date,$bill_id)
     {
         //$type consume-消费、income-收入123
