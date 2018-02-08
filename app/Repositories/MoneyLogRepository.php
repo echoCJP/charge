@@ -15,7 +15,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 class MoneyLogRepository extends InitRepository
 {
 
-    // test1234
+    // test123456
     public function doConsume($user_id,$cate_id,$type,$cost,$date,$bill_id)
     {
         //$type consume-消费、income-收入123
@@ -69,7 +69,6 @@ class MoneyLogRepository extends InitRepository
         }
             
         $this -> serverError('操作失败');
-
     }
 
     public function getLists($user_id,$year,$month)
@@ -135,8 +134,6 @@ class MoneyLogRepository extends InitRepository
             return $data;
         }
         $this->badRequest('数据为空');
-
-        
     }
 
     public function getCounts($user_id,$year,$month)
