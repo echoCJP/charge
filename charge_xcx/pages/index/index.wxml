@@ -1,13 +1,76 @@
 <!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" background-size="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
+<view class="main">
+  <view class="top">
+      <view>1月预算余额<text class="iconfont icon-browse_fill"></text></view>
+      <view class="sum">6710.51</view>
+      <view class="count">
+          <view class="left">
+            <text class="title">1月收入</text>
+            <text>20,000.00</text>
+          </view>
+          <view class="right">
+            <text class="title">1月支出</text>
+            <text>20,000.00</text>
+          </view>
+      </view>
+      <view class="button">
+      <button class="button" type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
+        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 记一笔 </button>
+      </view>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
+  <view class="bottom-lists">
+    <view class="today">
+        <view class="today-title row">
+          <text class="today-title-time">2017-01-17</text>
+          <text class="today-title-count">
+             <text>支出:216.00 </text>   
+             <text> 收入:216.00</text>
+          </text>
+        </view>
+        <view class="today-list row">
+            <span></span>
+            <text>吃喝</text>
+            <text class="today-list-sum">21.00</text>
+        </view>
+        <view class="today-list row">
+            <span></span>
+            <text>吃喝<text class="beizhu">(备注信息)</text></text>
+            <text class="today-list-sum">21.00</text>
+        </view>
+        <view class="today-list row">
+            <span></span>
+            <text>吃喝</text>
+            <text class="today-list-sum">21.00</text>
+        </view>
+    </view> 
+
+    <view class="today">
+        <view class="today-title row">
+          <text class="today-title-time">2017-01-17</text>
+          <text class="today-title-count">
+             <text>支出:216.00 </text>
+             <text> 收入:216.00</text>
+          </text>
+        </view>
+        <view class="today-list row">
+            <span></span>
+            <text>吃喝</text>
+            <text class="today-list-sum">21.00</text>
+        </view>
+        <view class="today-list row">
+            <span></span>
+            <text>吃喝</text>
+            <text class="today-list-sum">21.00</text>
+        </view>
+        <view class="today-list row">
+            <span></span>
+            <text>吃喝</text>
+            <text class="today-list-sum">21.00</text>
+        </view>
+    </view> 
+
+  </view>  
+
+  
 </view>

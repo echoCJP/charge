@@ -1,21 +1,93 @@
 /**index.wxss**/
-.userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.main{
+    
+}
+.top{
+    padding:40rpx 20rpx;
+    text-align: center;
+    background-color: #fff;
+}
+.sum{
+    color:#1AAD19;
+    font-size:46rpx;
+    font-weight: bold;
+    padding-top:10rpx; 
+    padding-bottom: 15rpx;
 }
 
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+.count{
+    width: 100%;
+    height: 100rpx;
+    line-height: 40rpx;
+}
+.count text{
+    line-height: 40rpx;
+}
+.count .title{
+    font-size: 24rpx;
+    color: #C0C0C0;
+}
+.button{
+    margin: 0 auto;
+    margin-top: 20rpx; 
+    width: 92%; 
+}
+.left{
+    width: 42%;
+    text-align: right;
+    position: absolute;
+    float: right;
 }
 
-.userinfo-nickname {
-  color: #aaa;
+.right{
+    width: 48%;
+    float: right;
+    text-align: left;
+
+}
+.left text{
+    width: 100%;
+    display: block;
+}
+.right text{
+    width: 100%;
+    display: block;
+    margin-left: 32rpx;
 }
 
-.usermotto {
-  margin-top: 200px;
+.bottom-lists{
+    width: 95%;
+    margin-top: 30rpx;
+}
+.today{
+    margin-top: 10rpx;
+    /*width: 89%;*/
+    /*padding: 20rpx;*/
+}
+.row{
+    width: 100%;
+    padding: 20rpx;
+    height: 40rpx;
+    background-color: #fff;
+    border-bottom: 1rpx solid #eee;
+}
+.today-title{
+    color: #C0C0C0;
+    height: 30rpx;
+    font-size: 24rpx;
+}
+.today-title-time{
+    float: left;
+}
+.today-title-count{
+    float: right;
+}
+.today-list{
+    width: 100%;
+}
+.today-list-sum{
+    float: right;
+}
+.beizhu{
+    color: #C0C0C0;
 }
