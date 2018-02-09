@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="main">
   <view class="top">
-      <view>1月预算余额<text class="iconfont icon-browse_fill"></text></view>
+      <view>1月预算余额<text class="iconfont icon-ai44"></text></view>
       <view class="sum">6710.51</view>
       <view class="count">
           <view class="left">
@@ -14,8 +14,7 @@
           </view>
       </view>
       <view class="button">
-      <button class="button" type="primary" size="{{defaultSize}}" loading="{{loading}}" plain="{{plain}}"
-        disabled="{{disabled}}" bindtap="default" hover-class="other-button-hover"> 记一笔 </button>
+        <button class="button" type="primary" size="default" bindtap="default"> 记一笔 </button>
       </view>
   </view>
 
@@ -29,17 +28,17 @@
           </text>
         </view>
         <view class="today-list row">
-            <span></span>
+            <text class="iconfont icon-chifan2600 icon-mini"></text>
             <text>吃喝</text>
             <text class="today-list-sum">21.00</text>
         </view>
         <view class="today-list row">
-            <span></span>
+            <span class="iconfont icon-chifan2600 icon-mini"></span>
             <text>吃喝<text class="beizhu">(备注信息)</text></text>
             <text class="today-list-sum">21.00</text>
         </view>
         <view class="today-list row">
-            <span></span>
+            <text class="iconfont icon-chifan2600 icon-mini"></text>
             <text>吃喝</text>
             <text class="today-list-sum">21.00</text>
         </view>
@@ -54,17 +53,17 @@
           </text>
         </view>
         <view class="today-list row">
-            <span></span>
+            <text class="iconfont icon-chifan2600 icon-mini"></text>
             <text>吃喝</text>
             <text class="today-list-sum">21.00</text>
         </view>
         <view class="today-list row">
-            <span></span>
+            <text class="iconfont icon-chifan2600 icon-mini"></text>
             <text>吃喝</text>
             <text class="today-list-sum">21.00</text>
         </view>
         <view class="today-list row">
-            <span></span>
+            <text class="iconfont icon-chifan2600 icon-mini"></text>
             <text>吃喝</text>
             <text class="today-list-sum">21.00</text>
         </view>

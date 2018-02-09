@@ -1,0 +1,103 @@
+/**index.wxss**/
+.main{
+    
+}
+.top{
+    padding:20rpx 50rpx;
+    height: 50rpx;
+    background-color: #fff;
+    /*background-color: red;*/
+}
+.icon-text{
+    margin-left: 20rpx;
+    position: absolute;
+    padding: 10rpx;
+    font-size: 32rpx;
+}
+.input-content{
+    width: 60%;
+    float: right;
+    text-align: right;
+}
+.input-content input{
+    font-size: 32rpx;
+}
+.fenge {
+  background-color: #fff;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.item {
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  flex: 1;
+}
+
+.fenge {
+  justify-content: center;
+  align-items: center;
+  padding:10rpx;
+}
+
+.fenge .line {
+  width: 40%;
+  height: 1rpx;
+  background-color: #dedede;
+}
+
+.fenge .text {
+  margin: 0 20rpx;
+  font-size: 26rpx;
+  color: #999;
+}
+
+.cate{
+    padding: 0rpx 40rpx;
+    background-color: #fff;
+}
+.page{
+
+}
+.block{
+    width: 20%;
+    float: left;
+}
+
+.block span,.block text{
+    text-align: center;
+    display: block;
+}
+
+
+.block:hover span,.block:hover text{
+    color: #1AAD19;
+}
+
+.picker{
+  padding: 26rpx;
+  background-color: #FFFFFF;
+}
+.picker text{
+    width: 10%;
+}
+.beizhu{
+    width: 88%;
+    float: right;
+    text-align: left;
+}
+.date-time{
+    margin-top: 40rpx;
+    border-bottom: 1rpx solid #ccc;
+}
+.time-setting{
+    margin-left: 10rpx;
+}
+.form{
+    background-color: red;
+}
+.btn-area{
+    width: 90%;
+    margin:30rpx auto;
+}

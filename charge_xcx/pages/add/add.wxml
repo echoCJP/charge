@@ -1,0 +1,97 @@
+<!--add.wxml-->
+<view class="main">
+  <view class="top">
+      <span class="iconfont icon-chifan2600"></span>
+      <text class="icon-text">吃喝</text>
+      <view class="input-content">
+         <input placeholder="请输入金额" auto-focus/>
+      </view>
+  </view>
+
+  <view class="fenge">
+    <view class='line'></view>
+    <view class='text'> 支出 </view>
+    <view class='line'></view>
+  </view>
+
+  <view class="cate">
+    <swiper indicator-dots="true">
+      <block wx:for="{{cateList}}">
+        <swiper-item class="page">
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+
+        </swiper-item>
+      </block>
+    </swiper>
+  </view> 
+
+
+
+  <form class="form" bindsubmit="formSubmit" bindreset="formReset">
+    <view class="section date-time">
+      <picker name="datePicker" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+        <view class="picker">
+          <text>日期: </text>
+          <text class="time-setting">{{date}}</text>
+        </view>
+      </picker>
+    </view>
+    <view class="section">
+        <view class="picker">
+          <text>备注: </text>
+          <view class="beizhu">
+            <input placeholder="备注内容" />  
+          </view>
+        </view> 
+    </view>
+    <view class="btn-area">
+      <button form-type="submit" type="primary"> 完成 </button>
+      <button form-type="reset" style="margin-top: 20rpx;">再记一笔</button>
+    </view>
+
+  </form>
+
+
+
+
+  
+</view>

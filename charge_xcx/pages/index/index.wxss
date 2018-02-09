@@ -2,6 +2,9 @@
 .main{
     
 }
+.icon-mini{
+    font-size: 35rpx;
+}
 .top{
     padding:40rpx 20rpx;
     text-align: center;
@@ -30,7 +33,7 @@
 .button{
     margin: 0 auto;
     margin-top: 20rpx; 
-    width: 92%; 
+    /*width: 92%; */
 }
 .left{
     width: 42%;
