@@ -164,9 +164,7 @@ class MoneyLogRepository extends InitRepository
         $cost_sum = MoneyLog::where($cost_where)->sum('cost');
 
         // 剩余
-        if(!$budget){
-           $budget[0] = 0; 
-        }
+        var_dump($budget);
         $residue_sum = $budget[0] - $cost_sum;
         // 收入总额
         $income_where = $where;
