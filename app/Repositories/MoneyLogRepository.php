@@ -154,9 +154,9 @@ class MoneyLogRepository extends InitRepository
         if(!$budget){
             $budget = 0;
         }else{
-            $budget = $budget[0];
+            $budget = 100;//$budget[0];
         }
-        
+
         // 统计已消费
         $where = [
             'user_id'=>$user_id,
