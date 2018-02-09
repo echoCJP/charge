@@ -151,6 +151,12 @@ class MoneyLogRepository extends InitRepository
 
         // 用户预计目标
         $budget = User::where('id',$user_id)->pluck('budget');
+        if(!$budget){
+            $budget = 0;
+        }else{
+            $budget = $budget[0];
+        }
+        
         // 统计已消费
         $where = [
             'user_id'=>$user_id,
@@ -164,15 +170,14 @@ class MoneyLogRepository extends InitRepository
         $cost_sum = MoneyLog::where($cost_where)->sum('cost');
 
         // 剩余
-        return $budget;
-        $residue_sum = $budget[0] - $cost_sum;
+        $residue_sum = $budget - $cost_sum;
         // 收入总额
         $income_where = $where;
         $income_where['cost_type'] = 1;
         $income_sum = MoneyLog::where($income_where)->sum('cost');
 
         $data = [
-            'budget' =>$budget[0],
+            'budget' =>$budget,
             'cost_sum'=>$cost_sum,
             'residue_sum'=>$residue_sum,
             'income_sum'=>$income_sum
