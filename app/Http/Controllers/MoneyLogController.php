@@ -23,8 +23,9 @@ class MoneyLogController extends Controller
         $date = $request->date;   
         $type = $request->type;//consume-消费、income-收入
         $bill_id = $request->bill_id; //账单ID（edit）
+        $remark = $request->remark; //备注
         
-        $todo = $this->moneylog->doConsume($user_id,$cate_id,$type,$cost,$date,$bill_id);
+        $todo = $this->moneylog->doConsume($user_id,$cate_id,$type,$cost,$date,$bill_id,$remark);
         return $todo;
     }
 

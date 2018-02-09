@@ -16,7 +16,7 @@ class MoneyLogRepository extends InitRepository
 {
 
     // test123456
-    public function doConsume($user_id,$cate_id,$type,$cost,$date,$bill_id)
+    public function doConsume($user_id,$cate_id,$type,$cost,$date,$bill_id,$remark)
     {
         //$type consume-消费、income-收入123
         $cost_type = 0;
@@ -49,6 +49,7 @@ class MoneyLogRepository extends InitRepository
             'cost'=>$cost,
             'cost_type'=>$cost_type,
             'year'=>$year,
+            'remark'=>$remark?$remark:'',
             'month'=>$month,
             'day'=>$day,
             'week'=>$week    
