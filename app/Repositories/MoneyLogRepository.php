@@ -151,10 +151,10 @@ class MoneyLogRepository extends InitRepository
 
         // 用户预计目标
         $budget = User::where('id',$user_id)->pluck('budget');
-        if(!$budget){
-            $budget = 0;
+        if($budget == true){
+            $budget = $budget[0];
         }else{
-            $budget = 100;//$budget[0];
+            $budget = 0;
         }
 
         // 统计已消费
