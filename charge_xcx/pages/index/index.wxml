@@ -14,7 +14,9 @@
           </view>
       </view>
       <view class="button">
-        <button class="button" type="primary" size="default" bindtap="default"> 记一笔 </button>
+        <navigator url="/pages/add/add">
+          <button class="button" type="primary" size="default" bindtap="default"> 记一笔 </button>
+        </navigator>
       </view>
   </view>
 
