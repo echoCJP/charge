@@ -60,5 +60,12 @@ class MoneyLogController extends Controller
         return $todo;
     }
 
+    // 分类图标
+    public function cate(Request $request){
+        $type = $request->type;//consume-消费、income-收入
+        $todo = $this->moneylog->cateList($type);
+        return $todo;
+    }
+
     
 }

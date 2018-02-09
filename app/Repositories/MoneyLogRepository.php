@@ -158,11 +158,15 @@ class MoneyLogRepository extends InitRepository
             'month'=>$month
         ];
         
+
         $cost_where = $where;
         $cost_where['cost_type'] = 0;
         $cost_sum = MoneyLog::where($cost_where)->sum('cost');
 
         // 剩余
+        if(!$budget){
+           $budget[0] = 0; 
+        }
         $residue_sum = $budget[0] - $cost_sum;
         // 收入总额
         $income_where = $where;
@@ -198,5 +202,17 @@ class MoneyLogRepository extends InitRepository
         }
 
         $this->badRequest('操作失败');
+    }
+
+    public function cateList($type){
+        if($type == "income"){
+            // 收入图标
+            $where['type'] = ['IN','0,1'];
+        }else{
+            $where['type'] = ['IN','0,2'];
+        }
+
+        $data = DB::table('cate') -> where($where)->get();
+        return $data;
     }
 }
