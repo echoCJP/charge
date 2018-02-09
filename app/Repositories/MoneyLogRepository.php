@@ -177,11 +177,12 @@ class MoneyLogRepository extends InitRepository
         $income_sum = MoneyLog::where($income_where)->sum('cost');
 
         $data = [
-            'budget' =>$budget,
-            'cost_sum'=>$cost_sum,
-            'residue_sum'=>$residue_sum,
-            'income_sum'=>$income_sum
+            'budget' =>format_money($budget),
+            'cost_sum'=>format_money($cost_sum),
+            'residue_sum'=>format_money($residue_sum),
+            'income_sum'=>format_money($income_sum)
         ];
+
 
         return $data;
     }
@@ -218,4 +219,6 @@ class MoneyLogRepository extends InitRepository
         $data = DB::table('cate') -> where($where)->get();
         return $data;
     }
+
+
 }

@@ -2,15 +2,15 @@
 <view class="main">
   <view class="top">
       <view>1月预算余额<text class="iconfont icon-ai44"></text></view>
-      <view class="sum">6710.51</view>
+      <view class="sum">{{sum.income_sum}}</view>
       <view class="count">
           <view class="left">
             <text class="title">1月收入</text>
-            <text>20,000.00</text>
+            <text>{{sum.income_sum}}</text>
           </view>
           <view class="right">
             <text class="title">1月支出</text>
-            <text>20,000.00</text>
+            <text>{{sum.cost_sum}}</text>
           </view>
       </view>
       <view class="button">
