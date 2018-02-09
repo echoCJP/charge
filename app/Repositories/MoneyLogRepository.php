@@ -180,7 +180,9 @@ class MoneyLogRepository extends InitRepository
             'budget' =>format_money($budget),
             'cost_sum'=>format_money($cost_sum),
             'residue_sum'=>format_money($residue_sum),
-            'income_sum'=>format_money($income_sum)
+            'income_sum'=>format_money($income_sum),
+            'year'=>$year,
+            'month'=>$month
         ];
 
 
