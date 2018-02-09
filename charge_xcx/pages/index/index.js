@@ -13,8 +13,7 @@ Page({
   getSum(){
     app.get('/bill/counts',{user_id:1,year:2017,month:3},res=>{
       this.setData({sum:res})
-      console.log(res)
-      console.log(this.sum)
+      // console.log(app.globalData)
     })
   },
   

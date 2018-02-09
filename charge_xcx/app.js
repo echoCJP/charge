@@ -3,10 +3,6 @@ import { devhost } from 'env.js'
 App({
   d:{
     userInfo:null,
-    staff:null,
-    wallet:null,
-    company:null,
-    site:null,
     token:null,
     path:'',
     imgHost:'https://xcx.1024cc.cn/uploads/'
@@ -25,7 +21,6 @@ App({
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         this.get('/mini/session',{code:res.code},res=>{
           this.setGlobal('token', res.token)
-          console.log(res.token)
           this.getUserInfo()
         })
       }
@@ -40,7 +35,6 @@ App({
     wx.getUserInfo({
       success:res=>{
         this.post('/mini/syncuser',{userInfo:res.userInfo},res=>{
-          console.log(res.userInfo)
           this.setGlobal('userInfo',res.userInfo);
 
           if (this.requestReady) {
