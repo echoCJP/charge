@@ -124,7 +124,7 @@ class MoneyLogRepository extends InitRepository
             $where_list = $where;
             $where_list['day'] = $v->day;
             $list = MoneyLog::where($where_list) 
-                ->leftJoin('cate', 'cate.id', '=', 'money_log.cost_type')
+                ->leftJoin('cate', 'cate.id', '=', 'money_log.type')
                 ->orderBy('money_log.created_at','desc') 
                 ->select($field) 
                 ->get();

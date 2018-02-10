@@ -94,3 +94,6 @@
 .beizhu{
     color: #C0C0C0;
 }
+.red{
+    color: red;
+}
