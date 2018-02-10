@@ -35,32 +35,6 @@
             <text class="today-list-sum {{list.cost_type == 1?'red':''}}">{{list.cost}}</text>
         </view>
     </view> 
-
-    <!-- <view class="today">
-        <view class="today-title row">
-          <text class="today-title-time">2017-01-17</text>
-          <text class="today-title-count">
-             <text>支出:216.00 </text>
-             <text> 收入:216.00</text>
-          </text>
-        </view>
-        <view class="today-list row">
-            <text class="iconfont icon-chifan2600 icon-mini"></text>
-            <text>吃喝</text>
-            <text class="today-list-sum">21.00</text>
-        </view>
-        <view class="today-list row">
-            <text class="iconfont icon-chifan2600 icon-mini"></text>
-            <text>吃喝</text>
-            <text class="today-list-sum">21.00</text>
-        </view>
-        <view class="today-list row">
-            <text class="iconfont icon-chifan2600 icon-mini"></text>
-            <text>吃喝</text>
-            <text class="today-list-sum">21.00</text>
-        </view>
-    </view>  -->
-
   </view>  
 
   

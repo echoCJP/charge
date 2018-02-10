@@ -103,7 +103,7 @@ class MoneyLogRepository extends InitRepository
       
         $data = [];
         foreach ($all_day as $k => $v) {
-            $field = ['money_log.id','money_log.cost','money_log.type','money_log.remark','cate.cate_name','cate.cover'];
+            $field = ['money_log.id','money_log.cost','money_log.type','money_log.cost_type','money_log.remark','cate.cate_name','cate.cover'];
             $cost_where = $where;
             $cost_where['cost_type'] = 0;
             $cost_where['day'] = $v->day;
