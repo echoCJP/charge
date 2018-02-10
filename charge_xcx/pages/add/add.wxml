@@ -10,14 +10,14 @@
 
   <view class="fenge">
     <view class='line'></view>
-    <view class='text'> 支出 </view>
+    <view class='text'> {{type_name}} </view>
     <view class='line'></view>
   </view>
 
   <view class="cate">
-    <swiper indicator-dots="true">
-      <block wx:for="{{cateList}}">
-        <swiper-item class="page">
+    <swiper indicator-dots="true" bindchange="swiperChange">
+      
+        <swiper-item class="page" item-id="consume">
           <view class="block">
             <span class="iconfont icon-chifan2600"></span>
             <text>吃喝</text>
@@ -58,9 +58,25 @@
             <span class="iconfont icon-chifan2600"></span>
             <text>吃喝</text>
           </view>
-
         </swiper-item>
-      </block>
+
+
+        <swiper-item class="page" item-id="income">
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+          <view class="block">
+            <span class="iconfont icon-chifan2600"></span>
+            <text>吃喝</text>
+          </view>
+        </swiper-item>
+
+      
     </swiper>
   </view> 
 
