@@ -28,7 +28,6 @@ class MiniController extends Controller
         $session = $mini->auth->session($request->code);
         $token = substr(sha1(rand(1,9999999)), 0,16);
         Cache::put($token,$session,config('cache.expired.auth'));
-        return config('cache.expired.auth');
         return ['token'=>$token];
     }
 
@@ -38,6 +37,7 @@ class MiniController extends Controller
         $token = $request->header('token');
         if(Cache::has($token)){
             $cache = Cache::get($token);
+            return $cache;
             $wechatFans = $this->wechatFans->syncFans($cache['openid'],(object)$request->userInfo);
             $cache['wechat'] = $wechatFans;
 
