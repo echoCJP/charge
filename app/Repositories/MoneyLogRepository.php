@@ -81,7 +81,9 @@ class MoneyLogRepository extends InitRepository
 
         
         if(!($month>0)||!($year>0)){
-            $this -> serverError('时间无效');
+            // $this -> serverError('时间无效');
+            $year = date('Y',time());
+            $month = date('m',time());
         }
 
 

@@ -6,7 +6,8 @@ Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     user_id:'',
-    sum:{}
+    sum:{},
+    lists:[]
   },
   onLoad: function (options) {
     
@@ -14,30 +15,29 @@ Page({
     //解决异步请求返回慢的问题,加载全局变量到this.d
     if(app.d.userInfo){
       this.setData({d:app.d})
-      // this.setData({user_id:app.d.userInfo.id})
       this.getSum(app.d.userInfo.id)
+      this.getList(app.d.userInfo.id)
     }else{
       app.requestReady = (res)=>{
-        // console.log(app.d.userInfo.id)
         this.setData({d:app.d})
-        // this.setData({user_id:app.d.userInfo.id})
-        // console.log(app.d.userInfo.id)
         this.getSum(app.d.userInfo.id)
+        this.getList(app.d.userInfo.id)
       }
-    }
-
-    console.log(app.d)
-    
+    } 
 
     
   },
-  getSum(user_id,year,month){
+  getSum(user_id,year=0,month=0){
     app.get('/bill/counts',{user_id:user_id,year:year,month:month},res=>{
       this.setData({sum:res})
+      console.log(this.data.sum)
     })
   },
-  getList(){
-
+  getList(user_id,year=0,month=0){
+    app.get('/bill/lists',{user_id:user_id,year:year,month:month},res=>{
+      this.setData({lists:res})
+      console.log(this.data.lists)
+    })
   }
   
 })
