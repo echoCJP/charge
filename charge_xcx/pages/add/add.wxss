@@ -13,6 +13,10 @@
     position: absolute;
     padding: 10rpx;
     font-size: 32rpx;
+    color: #1AAD19;
+}
+.icon-color{
+  color: #1AAD19;
 }
 .input-content{
     width: 60%;
@@ -100,4 +104,11 @@
 .btn-area{
     width: 90%;
     margin:30rpx auto;
+}
+.chooseCate{
+  background-color: red;
+   color: #1AAD19;
+}
+.gaoliang{
+  color: #1AAD19;
 }

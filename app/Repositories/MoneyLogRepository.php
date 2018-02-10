@@ -30,6 +30,7 @@ class MoneyLogRepository extends InitRepository
         }
 
         // date为
+        $date = strtotime($date);
         $year = date('Y',$date);
         $month = date('m',$date);
         $day = date('d',$date);
@@ -214,11 +215,10 @@ class MoneyLogRepository extends InitRepository
     public function cateList($type){
         if($type == "income"){
             // 收入图标
-            // $where = ['type',[0,1]];
             $data = DB::table('cate') -> whereIn('type', [0, 2])->get();
         }else{
             $data = DB::table('cate') ->whereIn('type', [0, 1])->get();
-            // $where = ['type',[0,2]];
+
         }
 
         

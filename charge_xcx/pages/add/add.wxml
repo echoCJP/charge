@@ -1,10 +1,13 @@
 <!--add.wxml-->
 <view class="main">
+  <form class="form" bindsubmit="formSubmit" bindreset="formReset">
   <view class="top">
-      <span class="iconfont icon-chifan2600"></span>
-      <text class="icon-text">吃喝</text>
+      <block class="chooseCate">
+        <span class="iconfont {{chooseCate.cover}} icon-color"></span>
+        <text class="icon-text">{{chooseCate.cate_name}}</text>
+      </block>
       <view class="input-content">
-         <input placeholder="请输入金额" auto-focus/>
+         <input placeholder="请输入金额" name="cost" auto-focus/>
       </view>
   </view>
 
@@ -18,61 +21,17 @@
     <swiper indicator-dots="true" bindchange="swiperChange">
       
         <swiper-item class="page" item-id="consume">
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
+          <view class="block {{cateIndex == idc?'gaoliang':''}}" wx:key="id" wx:for="{{cate}}" wx:for-index="idc" wx:for-item="cd" data-id="{{idc}}" bindtap="choose">
+            <span class="iconfont {{cd.cover}}"></span>
+            <text data-id="{{cd.id}}">{{cd.cate_name}}</text>
           </view>
         </swiper-item>
 
 
         <swiper-item class="page" item-id="income">
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
-          </view>
-          <view class="block">
-            <span class="iconfont icon-chifan2600"></span>
-            <text>吃喝</text>
+          <view class="block {{cateIndex == idc?'gaoliang':''}}" wx:key="id" wx:for="{{cate}}" wx:for-index="idc" wx:for-item="cd" wx:for-item="cd" data-id="{{idc}}" bindtap="choose">
+            <span class="iconfont {{cd.cover}}"></span>
+            <text>{{cd.cate_name}}</text>
           </view>
         </swiper-item>
 
@@ -82,7 +41,7 @@
 
 
 
-  <form class="form" bindsubmit="formSubmit" bindreset="formReset">
+
     <view class="section date-time">
       <picker name="datePicker" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
         <view class="picker">
@@ -95,7 +54,7 @@
         <view class="picker">
           <text>备注: </text>
           <view class="beizhu">
-            <input placeholder="备注内容" />  
+            <input placeholder="备注内容" name="remark"/>  
           </view>
         </view> 
     </view>

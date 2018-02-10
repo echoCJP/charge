@@ -15,12 +15,14 @@ App({
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
 
+
     // 登录
     wx.login({
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
         this.get('/mini/session',{code:res.code},res=>{
           this.setGlobal('token', res.token)
+
           this.getUserInfo()
         })
       }
@@ -28,7 +30,7 @@ App({
   },
 
   globalData: {
-    userInfo: null
+    userInfo: ''
   },
 
   getUserInfo(){
@@ -36,12 +38,15 @@ App({
       success:res=>{
         this.post('/mini/syncuser',{userInfo:res.userInfo},res=>{
           this.setGlobal('userInfo',res.userInfo);
-
+          wx.setStorageSync('userInfo',res.userInfo)
           if (this.requestReady) {
             this.requestReady(res)
           }
 
         })
+      },
+      fail:res=>{
+        wx.openSetting()
       }
     })
   },
@@ -63,6 +68,13 @@ App({
     wx.showToast({
       title: text,
       // image: '/img/error.png',
+    })
+  },
+
+  tipMsg(text,error){
+    wx.showToast({
+      title: text,
+      icon: 'none',
     })
   },
 
