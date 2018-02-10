@@ -33,7 +33,6 @@
 .button{
     margin: 0 auto;
     margin-top: 20rpx; 
-    /*width: 92%; */
 }
 .left{
     width: 42%;
@@ -64,8 +63,6 @@
 }
 .today{
     margin-top: 10rpx;
-    /*width: 89%;*/
-    /*padding: 20rpx;*/
 }
 .row{
     width: 100%;

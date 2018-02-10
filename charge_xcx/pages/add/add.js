@@ -8,7 +8,8 @@ Page({
     cateIndex:0,
     type:'consume',
     type_name:'支出',
-    user_id:''
+    user_id:'',
+    is_add:false
   },
   onLoad: function (options) {
 
@@ -55,8 +56,12 @@ Page({
     this.setData({cateIndex:event.currentTarget.dataset.id})
     this.setData({chooseCate:this.data.cate[this.data.cateIndex]})
   },
+  addone(){
+    this.setData({is_add:true})
+  },
+
   formSubmit(e){
-    console.log(e)
+    // console.log(e)
     wx.vibrateShort()
     var data=e.detail.value
     data['user_id'] = this.data.user_id
@@ -86,9 +91,12 @@ Page({
     app.post('/bill/consume',data,res=>{
       wx.showToast({title:'提交成功'})
       
-      setTimeout(function(){
-        wx.navigateBack()
-      },1000)
+      if(!this.data.is_add){
+        setTimeout(function(){
+          wx.navigateBack()
+        },1000)
+      }
+      this.setData({is_add:false})
 
     })
 

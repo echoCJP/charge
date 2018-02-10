@@ -9,7 +9,7 @@ Page({
     sum:{},
     lists:[]
   },
-  onLoad: function (options) {
+  onShow: function (options) {
     
        
     //解决异步请求返回慢的问题,加载全局变量到this.d
@@ -30,13 +30,13 @@ Page({
   getSum(user_id,year=0,month=0){
     app.get('/bill/counts',{user_id:user_id,year:year,month:month},res=>{
       this.setData({sum:res})
-      console.log(this.data.sum)
+      // console.log(this.data.sum)
     })
   },
   getList(user_id,year=0,month=0){
     app.get('/bill/lists',{user_id:user_id,year:year,month:month},res=>{
       this.setData({lists:res})
-      console.log(this.data.lists)
+      // console.log(this.data.lists)
     })
   }
   

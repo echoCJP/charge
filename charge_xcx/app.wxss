@@ -4,7 +4,6 @@
 
 page{
     background-color: #eee;
-    /*#efeff4;*/
     font-size: 28rpx;
     font-family: font-family:"微软雅黑";
 }

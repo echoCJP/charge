@@ -43,7 +43,7 @@
 
 
     <view class="section date-time">
-      <picker name="datePicker" mode="date" value="{{date}}" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">
+      <picker name="datePicker" mode="date" value="{{date}}" start="2015-09-01" end="2099-09-01" bindchange="bindDateChange">
         <view class="picker">
           <text>日期: </text>
           <text class="time-setting">{{date}}</text>
@@ -60,7 +60,7 @@
     </view>
     <view class="btn-area">
       <button form-type="submit" type="primary"> 完成 </button>
-      <button form-type="reset" style="margin-top: 20rpx;">再记一笔</button>
+      <button form-type="submit" bindtap="addone" style="margin-top: 20rpx;">再记一笔</button>
     </view>
 
   </form>

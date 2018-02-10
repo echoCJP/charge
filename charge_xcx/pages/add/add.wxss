@@ -1,12 +1,9 @@
 /**index.wxss**/
-.main{
-    
-}
+
 .top{
     padding:20rpx 50rpx;
     height: 50rpx;
     background-color: #fff;
-    /*background-color: red;*/
 }
 .icon-text{
     margin-left: 20rpx;
@@ -61,9 +58,7 @@
     padding: 0rpx 40rpx;
     background-color: #fff;
 }
-.page{
 
-}
 .block{
     width: 20%;
     float: left;
