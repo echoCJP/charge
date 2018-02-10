@@ -103,7 +103,7 @@ class MoneyLogRepository extends InitRepository
       
         $data = [];
         foreach ($all_day as $k => $v) {
-            $field = ['money_log.id','money_log.cost','money_log.type','money_log.remark'];
+            $field = ['money_log.id','money_log.cost','money_log.type','money_log.remark','cate.cate_name','cate.cover'];
             $cost_where = $where;
             $cost_where['type'] = 0;
             $cost_where['day'] = $v->day;
@@ -121,7 +121,10 @@ class MoneyLogRepository extends InitRepository
             $income_where['type'] = 1;
             $data[$k]['day_imcome_sum'] = MoneyLog::where($income_where)->sum('cost');
             // 消费|收入
-            $list = MoneyLog::where($where) 
+            $where_list = $where;
+            $where_list['day'] = $v->day;
+            $list = MoneyLog::where($where_list) 
+                ->leftJoin('cate', 'cate.id', '=', 'money_log.cost_type')
                 ->orderBy('money_log.created_at','desc') 
                 ->select($field) 
                 ->get();
