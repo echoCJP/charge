@@ -214,12 +214,14 @@ class MoneyLogRepository extends InitRepository
     public function cateList($type){
         if($type == "income"){
             // 收入图标
-            $where['type'] = ['IN','0,1'];
+            // $where = ['type',[0,1]];
+            $data = DB::table('cate') -> whereIn('type', [0, 2])->get();
         }else{
-            $where['type'] = ['IN','0,2'];
+            $data = DB::table('cate') ->whereIn('type', [0, 1])->get();
+            // $where = ['type',[0,2]];
         }
 
-        $data = DB::table('cate') -> where($where)->get();
+        
         return $data;
     }
 
