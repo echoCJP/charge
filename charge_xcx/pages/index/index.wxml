@@ -32,7 +32,7 @@
         <view class="today-list row" wx:for="{{td.list}}" wx:for-index="idxx" wx:for-item="list">
             <text class="iconfont {{list.cover}} icon-mini"></text>
             <text>{{list.cate_name}}<text class="beizhu" wx:if="{{list.remark}}">({{list.remark}})</text></text>
-            <text class="today-list-sum {{list.cost_type?'red':''}}">{{list.cost}}</text>
+            <text class="today-list-sum {{list.cost_type == 1?'red':''}}">{{list.cost}}</text>
         </view>
     </view> 
 
