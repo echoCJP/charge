@@ -103,7 +103,7 @@ class MoneyLogRepository extends InitRepository
       
         $data = [];
         foreach ($all_day as $k => $v) {
-            $field = ['money_log.id','money_log.cost','money_log.type'];
+            $field = ['money_log.id','money_log.cost','money_log.type','money_log.remark'];
             $cost_where = $where;
             $cost_where['type'] = 0;
             $cost_where['day'] = $v->day;
@@ -114,24 +114,18 @@ class MoneyLogRepository extends InitRepository
             $data[$k]['week'] = $v->week;
 
             // 消费
-            $cost_list = MoneyLog::where($cost_where) 
-                ->orderBy('money_log.created_at','desc') 
-                ->select($field) 
-                ->get();
             $data[$k]['day_cost_sum'] = MoneyLog::where($cost_where)->sum('cost');
-            $data[$k]['cost'] = $cost_list;
+            
             // 收入
             $income_where = $cost_where;
             $income_where['type'] = 1;
-            $income_list = MoneyLog::where($income_where) 
+            $data[$k]['day_imcome_sum'] = MoneyLog::where($income_where)->sum('cost');
+            // 消费|收入
+            $list = MoneyLog::where($where) 
                 ->orderBy('money_log.created_at','desc') 
                 ->select($field) 
                 ->get();
-            $data[$k]['income'] = $income_list;
-            $data[$k]['day_imcome_sum'] = MoneyLog::where($income_where)->sum('cost');
-
-            
-
+            $data[$k]['list'] = $list;
         }
         if($data){
             return $data;
