@@ -37,17 +37,17 @@
 }
 
 .list-name {
+  width: 90%;
   margin-left: 32rpx;
   line-height: 88rpx;
-  font-family: PingFang SC;
-  font-size: 34rpx;
+  font-size: 30rpx;
   color: #000;
   
 }
 
 .list-icon {
   margin-top: 30rpx;
-  margin-left: 538rpx;
+  /*margin-left: 538rpx;*/
   width: 16rpx;
   height: 26rpx;
 }
@@ -55,4 +55,16 @@
 .list-container {
   /*margin-top: 98rpx;*/
   width: 100%;
+}
+.tip{
+  padding: 2rpx;
+  background-color: red;
+  border-radius: 20rpx;
+  font-size: 20rpx;
+  color: #fff;
+  margin-left: 10rpx;
+  line-height: 32rpx;
+}
+.green{
+  background-color: green;
 }

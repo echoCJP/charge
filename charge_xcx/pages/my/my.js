@@ -6,11 +6,15 @@ Page({
   data: {
     canIUse: wx.canIUse('button.open-type.getUserInfo'),
     user_id:'',
+    budget:'',
+    userInfo:{},
     sum:{},
     lists:[]
   },
   onShow: function (options) {
-    console.log(wx.getStorageSync('userInfo'))
+    // this.setData({budget:wx.getStorageSync('userInfo')['budget']})
+    // console.log(wx.getStorageSync('userInfo'))
+    this.getUserInfo()
   },
   showClause: function () {
     wx.navigateTo({
@@ -26,41 +30,23 @@ Page({
       }
     })
   },
-  showHelp: function () {
-    wx.navigateTo({
-      url: './help/help',
-      success: function (res) {
-        // success
+
+  getUserInfo(){
+    wx.getUserInfo({
+      success:res=>{
+        app.post('/mini/syncuser',{userInfo:res.userInfo},res=>{
+            this.setData({budget:res.userInfo.budget})
+        })
       },
-      fail: function () {
-        // fail
-      },
-      complete: function () {
-        // complete
+      fail:res=>{
+        console.log('fail')
+        wx.openSetting()
       }
     })
   },
-  showFeedback: function () {
-    wx.navigateTo({
-      url: './feedback/feedback',
-      success: function(res){
-        // success
-      },
-      fail: function() {
-        // fail
-      },
-      complete: function() {
-        // complete
-      }
-    })
-  }
+  
 
-  // getSum(user_id,year=0,month=0){
-  //   app.get('/bill/counts',{user_id:user_id,year:year,month:month},res=>{
-  //     this.setData({sum:res})
-  //     // console.log(this.data.sum)
-  //   })
-  // },
+
   // getList(user_id,year=0,month=0){
   //   app.get('/bill/lists',{user_id:user_id,year:year,month:month},res=>{
   //     this.setData({lists:res})

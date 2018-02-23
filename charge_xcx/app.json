@@ -26,11 +26,6 @@
       "iconPath": "images/me.png",
       "selectedIconPath": "images/me_hover.png",   
       "text": "我的"  
-    }, {   
-      "pagePath": "pages/logs/logs", 
-      "iconPath": "images/me.png",
-      "selectedIconPath": "images/me_hover.png",   
-      "text": "logs"  
     }]  
   } 
 }

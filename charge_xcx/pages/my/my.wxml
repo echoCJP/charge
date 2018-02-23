@@ -6,7 +6,8 @@
   </view> -->
   <view class="list-container">
   <view class="list-item" bindtap="showClause">
-    <text class="list-name">预算设置</text>
+    <text class="list-name">预算设置<text class="tip green" wx:if="{{budget}}">{{budget}}</text><text class="tip" wx:else="{{budget}}">请设置月预算</text>
+    </text>
     <image class="list-icon" src="/images/chevron.png"></image>
   </view>
   <view class="list-item" bindtap="showHelp">
@@ -17,4 +18,5 @@
     <text class="list-name">用户反馈</text>
     <image class="list-icon" src="/images/chevron.png"></image>
   </view>
+
   </view>

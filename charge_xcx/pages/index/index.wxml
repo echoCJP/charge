@@ -2,7 +2,7 @@
 <view class="main">
   <view class="top">
       <view>{{sum.month}}月预算余额<text class="iconfont icon-ai44"></text></view>
-      <view class="sum">{{sum.income_sum}}</view>
+      <view class="sum">{{sum.residue_sum}}</view>
       <view class="count">
           <view class="left">
             <text class="title">{{sum.month}}月收入</text>
