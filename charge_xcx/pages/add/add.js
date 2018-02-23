@@ -99,10 +99,6 @@ Page({
       this.setData({is_add:false})
 
     })
-
-
-
-
   }
 
 

@@ -1,0 +1,25 @@
+/* pages/settings/clause/clause.wxss */
+
+.form{
+    
+}
+.picker{
+  background-color: #FFFFFF;
+  padding: 26rpx;
+  height: 50rpx;
+  
+}
+.picker text{
+    float: left;
+    width: 30%;
+
+    padding: 8rpx;
+}
+.beizhu{    
+    float: left;
+    text-align: left;
+}
+
+.btn-area{
+    margin-top:40rpx;
+}

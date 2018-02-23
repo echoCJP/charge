@@ -1,0 +1,19 @@
+<!--pages/my/setting/setting.wxml-->
+<view class="main">
+  <form class="form" bindsubmit="formSubmit" bindreset="formReset">
+  
+  
+    <view class="section">
+        <view class="picker">
+          <text>月预算金额: </text>
+          <view class="beizhu">
+            <input placeholder="请设置预算金额" name="budget" auto-focus/>
+          </view>
+        </view> 
+    </view>
+    <view class="btn-area">
+      <button form-type="submit" type="primary"> 完成 </button>
+    </view>
+
+  </form>
+</view>

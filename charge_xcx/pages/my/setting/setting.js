@@ -1,0 +1,51 @@
+// pages/settings/clause/clause.js
+
+const app = getApp()
+
+Page({
+  data:{
+    is_add:false
+  },
+  onLoad:function(options){
+    // 页面初始化 options为页面跳转所带来的参数
+  },
+  onReady:function(){
+    // 页面渲染完成
+  },
+  onShow:function(){
+    // 页面显示
+  },
+  onHide:function(){
+    // 页面隐藏
+  },
+  onUnload:function(){
+    // 页面关闭
+  },
+  formSubmit(e){
+    // console.log(e)
+    wx.vibrateShort()
+    var data=e.detail.value
+
+    console.log(data)
+    // $bill_id = $request->bill_id; //账单ID（edit）
+
+    if(!data.budget){
+      app.tipMsg('请填写金额')
+      return
+    }
+
+
+    app.post('/bill/setting',data,res=>{
+      wx.showToast({title:'提交成功'})
+      
+      if(!this.data.is_add){
+        setTimeout(function(){
+          wx.navigateBack()
+        },1000)
+      }
+      this.setData({is_add:false})
+
+    })
+  }
+
+})

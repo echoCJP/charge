@@ -32,12 +32,12 @@ App({
   globalData: {
     userInfo: ''
   },
-
   getUserInfo(){
     wx.getUserInfo({
       success:res=>{
         this.post('/mini/syncuser',{userInfo:res.userInfo},res=>{
           this.setGlobal('userInfo',res.userInfo);
+          // console.log(res.userInfo)
           wx.setStorageSync('userInfo',res.userInfo)
           if (this.requestReady) {
             this.requestReady(res)
@@ -46,6 +46,7 @@ App({
         })
       },
       fail:res=>{
+        console.log('fail')
         wx.openSetting()
       }
     })

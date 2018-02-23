@@ -20,7 +20,7 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::post('/bill/consume', 'MoneyLogController@consume');//记账
 Route::get('/bill/counts', 'MoneyLogController@counts');//统计
 Route::get('/bill/lists', 'MoneyLogController@lists');//列表
-Route::get('/bill/setting', 'MoneyLogController@setting');//设置
+Route::post('/bill/setting', 'MoneyLogController@setting');//设置
 Route::get('/bill/cate', 'MoneyLogController@cate');//分类
 
 

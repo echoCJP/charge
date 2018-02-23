@@ -26,13 +26,24 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
 					"name": "add",
 					"pathName": "pages/add/add",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "user",
+					"pathName": "pages/my/my",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "setting",
+					"pathName": "pages/my/setting/setting"
 				}
 			]
 		}
