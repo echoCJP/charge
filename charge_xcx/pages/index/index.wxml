@@ -34,7 +34,7 @@
 
         
         <view class="today-list row" wx:key="id" wx:for="{{td.list}}" wx:for-index="idxx" wx:for-item="list">
-            <navigator url="/pages/add/add?id={{list.id}}&cost_type={{list.cost_type}}&cate_id={{list.type}}&cost={{list.cost}}&time={{td.year}}-{{td.month}}-{{td.day}}&remark={{list.remark}}" redirect="true" hover-class="navigator-hover">
+            <navigator url="/pages/add/add?id={{list.id}}&cost_type={{list.cost_type}}&cate_id={{list.type}}&cost={{list.cost}}&time={{td.year}}-{{td.month}}-{{td.day}}&remark={{list.remark}}" hover-class="navigator-hover">
             <text class="iconfont {{list.cover}} icon-mini"></text>
             <text>{{list.cate_name}}<text class="beizhu" wx:if="{{list.remark}}">({{list.remark}})</text></text>
             <text class="today-list-sum {{list.cost_type == 1?'red':''}}">{{list.cost}}</text>

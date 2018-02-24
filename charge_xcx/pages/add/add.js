@@ -14,6 +14,7 @@ Page({
     current:0,
     edit_content:{},
     date:'',
+    swiper_index:'',
     id:''//>0即时修改
   },
   onLoad: function (options) {
@@ -24,9 +25,9 @@ Page({
       }
       
       if(options.cost_type == 1){
-        this.setData({type:'income',type_name:'收入'})
+        this.setData({type:'income',type_name:'收入',swiper_index:1})
       }else{
-        this.setData({type:'consume',type_name:'支出'})
+        this.setData({type:'consume',type_name:'支出',swiper_index:0})
       }
 
       

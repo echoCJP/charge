@@ -18,7 +18,7 @@
   </view>
 
   <view class="cate">
-    <swiper indicator-dots="true" bindchange="swiperChange">
+    <swiper indicator-dots="true" bindchange="swiperChange" current="{{swiper_index}}">
       
         <swiper-item class="page" item-id="consume">
           <view class="block {{cateIndex == idc?'gaoliang':''}}" wx:key="id" wx:for="{{cate}}" wx:for-index="idc" wx:for-item="cd" data-id="{{idc}}" bindtap="choose">
