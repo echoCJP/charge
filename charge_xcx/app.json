@@ -4,6 +4,7 @@
     "pages/add/add",
     "pages/my/my",
     "pages/my/setting/setting",
+    "pages/my/help/help",
     "pages/logs/logs"
   ],
   "window":{

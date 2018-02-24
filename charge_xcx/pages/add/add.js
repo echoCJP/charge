@@ -18,8 +18,6 @@ Page({
     id:''//>0即时修改
   },
   onLoad: function (options) {
-      console.log(options)
-
       if(options.id > 0){
         this.setData({edit_content:options,id:options.id,cate_id:options.cate_id,date:options.time})
       }
@@ -126,9 +124,6 @@ Page({
           if(!this.data.is_add){
             setTimeout(function(){
               wx.navigateBack()
-              // wx.navigateTo({
-              //   url: '/pages/index/index'　　// 页面 A
-              // })
 
             },1000)
           }

@@ -1,15 +1,24 @@
 <!--add.wxml-->
 <view class="main">
   <form class="form" bindsubmit="formSubmit" bindreset="formReset">
-  <view class="top">
+  <!-- <view class="top">
       <block class="chooseCate">
-        <span class="iconfont {{chooseCate.cover}} icon-color"></span>
+        <text class="iconfont {{chooseCate.cover}} icon-color"></text>
         <text class="icon-text">{{chooseCate.cate_name}}</text>
       </block>
       <view class="input-content">
          <input placeholder="请输入金额" name="cost" value="{{edit_content.cost}}" auto-focus/>
       </view>
-  </view>
+  </view> -->
+  <view class="top">
+      <view class="left">
+        <text class="iconfont {{chooseCate.cover}} icon-color"></text>
+        <text class="icon-text">{{chooseCate.cate_name}}</text>
+      </view>
+      <view class="input-content">
+         <input placeholder="请输入金额" name="cost" value="{{edit_content.cost}}" auto-focus/>
+      </view>
+  </view>  
 
   <view class="fenge">
     <view class='line'></view>

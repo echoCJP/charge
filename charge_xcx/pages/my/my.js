@@ -19,15 +19,11 @@ Page({
   showClause: function () {
     wx.navigateTo({
       url: './setting/setting',
-      success: function (res) {
-        // success
-      },
-      fail: function () {
-        // fail
-      },
-      complete: function () {
-        // complete
-      }
+    })
+  },
+  showHelp: function () {
+    wx.navigateTo({
+      url: './help/help',
     })
   },
 

@@ -1,0 +1,16 @@
+<view class="containers">
+  <image class="logo" src="/images/logo.jpg"></image>
+  <text class="name">来记账吧 v0.2</text>
+  <text class="name">来记账吧是一款个人记账小程序,专注于个人提供简单、高效、便捷的记账功能，帮助你掌控自己的消费。</text>
+
+  <text class="name">开发者信息</text>
+  <!-- <text class="name">Echo</text> -->
+  <text class="name">GitHub：https://github.com/echo897960700</text>
+  <text class="name">个人主页：https://www.1024cc.cn</text>
+  <text class="name">个人微信：cjp897960700(合作请联系)</text>
+  <!-- <image class="user-avatar" src="/images/face2.png"></image>
+  <text class="name">maruko0713</text>
+  <text class="name">GitHub：@maruko0713</text>
+  <text class="name">个人主页：http://maruko0713.github.io</text>
+  <text class="copy">本软件已开源：https://github.com/airingursb/miemie</text>
+ --></view>

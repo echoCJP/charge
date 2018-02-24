@@ -1,7 +1,11 @@
 <!--index.wxml-->
 <scroll-view scroll-x="false">
 <view class="main">
-  
+  <view class="choose-time">
+      <picker mode="date" value="{{date}}" fields="year" fields="month" start="1995-04" end="2095-04" bindchange="bindDateChange">
+        <image  style="width: 60rpx; height: 60rpx;" src="../../images/logo.jpg"></image>
+      </picker>
+  </view>
   <view class="top">
       <view>{{sum.month}}月预算余额<text class="iconfont icon-ai44"></text></view>
       <view class="sum">

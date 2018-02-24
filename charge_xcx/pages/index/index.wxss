@@ -5,8 +5,16 @@
 .icon-mini{
     font-size: 35rpx;
 }
+.choose-time{
+    position: fixed;
+    top: 80rpx;
+    left: 80rpx;
+    width: 60rpx;
+    height: 60rpx;
+    background-color: red;
+}
+
 .top{
-    /*width: 100%;*/
     padding:40rpx 20rpx;
     text-align: center;
     background-color: #fff;
@@ -32,7 +40,6 @@
     color: #C0C0C0;
 }
 .button{
-    /*width: 80%;*/
     margin: 0 auto;
     margin-top: 20rpx; 
 }
@@ -70,10 +77,12 @@
 }
 .row{
     width: 100%;
-    padding: 20rpx;
+    display: block;
+    padding: 19rpx;
     height: 40rpx;
     background-color: #fff;
     border-bottom: 1rpx solid #eee;
+    /*box-sizing: border-box;*/
 }
 .today-title{
     color: #C0C0C0;

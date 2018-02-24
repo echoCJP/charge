@@ -1,25 +1,30 @@
-/**index.wxss**/
-
+/**add.wxss**/
 .top{
-    padding:20rpx 50rpx;
-    height: 50rpx;
-    background-color: #fff;
+  background-color: #fff;
+  height: 50rpx;
+  width: 100%;
+  padding: 20rpx;
+  font-size: 36rpx;
 }
-.icon-text{
-    margin-left: 20rpx;
-    position: absolute;
-    padding: 10rpx;
-    font-size: 32rpx;
-    color: #1AAD19;
+
+.left{
+  width: 30%;
+  float: left;
 }
-.icon-color{
-  color: #1AAD19;
+
+.left text{
+  margin-left: 30rpx;
 }
 .input-content{
-    width: 60%;
-    float: right;
-    text-align: right;
+  width: 55%;
+  display: block;
+  float: right;  text-align: right;
+  padding-right: 80rpx;
 }
+
+
+
+
 .input-content input{
     font-size: 32rpx;
 }
@@ -101,10 +106,7 @@
     width: 90%;
     margin:30rpx auto;
 }
-.chooseCate{
-  background-color: red;
-   color: #1AAD19;
-}
+
 .gaoliang{
   color: #1AAD19;
 }
