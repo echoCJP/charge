@@ -36,7 +36,7 @@ Page({
   getList(user_id,year=0,month=0){
     app.get('/bill/lists',{user_id:user_id,year:year,month:month},res=>{
       this.setData({lists:res})
-      // console.log(this.data.lists)
+      console.log(this.data.lists)
     })
   }
   

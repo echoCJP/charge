@@ -9,12 +9,32 @@ Page({
     type:'consume',
     type_name:'支出',
     user_id:'',
-    is_add:false
+    is_add:false,
+    cate_id:'',
+    current:0,
+    edit_content:{},
+    date:'',
+    id:''//>0即时修改
   },
   onLoad: function (options) {
+      console.log(options)
 
-      this.getCate(this.data.type)
+      if(options.id > 0){
+        this.setData({edit_content:options,id:options.id,cate_id:options.cate_id,date:options.time})
+      }
+      
+      if(options.cost_type == 1){
+        this.setData({type:'income',type_name:'收入'})
+      }else{
+        this.setData({type:'consume',type_name:'支出'})
+      }
+
+      
+
+      this.getCate(this.data.type,options.cate_id)
       this.setData({user_id:wx.getStorageSync('userInfo')['id']})
+
+      
       
 
 
@@ -37,10 +57,19 @@ Page({
       date: e.detail.value
     })
   },
-  getCate(type){
+  getCate(type,cate_id){
     app.get('/bill/cate',{type:type},res=>{
       this.setData({cate:res})
-      this.setData({chooseCate:this.data.cate[0]})
+      if(cate_id > 0){
+        for (var i = 0; i < this.data.cate.length; i++) {
+            if(this.data.cate[i]['id'] == this.data.cate_id){
+               this.setData({cateIndex:i})
+            }
+        }
+        this.setData({chooseCate:this.data.cate[this.data.cateIndex]})
+      }else{
+        this.setData({chooseCate:this.data.cate[0]})
+      }
     })
   },
   swiperChange:function(event){
@@ -64,6 +93,7 @@ Page({
     // console.log(e)
     wx.vibrateShort()
     var data=e.detail.value
+    data['bill_id'] = this.data.id
     data['user_id'] = this.data.user_id
     data['cate_id'] = this.data.chooseCate.id
     data['date'] = data.datePicker
@@ -89,17 +119,44 @@ Page({
     }
 
     app.post('/bill/consume',data,res=>{
-      wx.showToast({title:'提交成功'})
-      
-      if(!this.data.is_add){
-        setTimeout(function(){
-          wx.navigateBack()
-        },1000)
+      console.log(res)
+      if(res.code == 200){
+          wx.showToast({title:'提交成功'})
+          if(!this.data.is_add){
+            setTimeout(function(){
+              wx.navigateBack()
+              // wx.navigateTo({
+              //   url: '/pages/index/index'　　// 页面 A
+              // })
+
+            },1000)
+          }
+          this.setData({is_add:false})
+      }else{
+          wx.showToast({title:'操作失败'})
       }
-      this.setData({is_add:false})
+      
 
     })
-  }
+  },
+
+  del(){
+    app.get('/bill/del',{bill_id:this.data.id},res=>{
+      if(res.code == 200){
+          wx.showToast({title:'提交成功'})
+          if(!this.data.is_add){
+            setTimeout(function(){
+              wx.navigateBack()
+            },1000)
+          }
+          this.setData({is_add:false})
+      }else{
+          wx.showToast({title:'操作失败'})
+      }
+    })
+  },
+
+
 
 
   

@@ -22,6 +22,7 @@ Route::get('/bill/counts', 'MoneyLogController@counts');//统计
 Route::get('/bill/lists', 'MoneyLogController@lists');//列表
 Route::post('/bill/setting', 'MoneyLogController@setting');//设置
 Route::get('/bill/cate', 'MoneyLogController@cate');//分类
+Route::get('/bill/del', 'MoneyLogController@del');//删除
 
 
 /*需要用户授权接口*/

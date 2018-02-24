@@ -226,4 +226,23 @@ class MoneyLogRepository extends InitRepository
     }
 
 
+    public function del($bill_id){
+         // 验证
+        if(!($bill_id>0)){
+            $this -> serverError('服务出错');
+        }
+
+        $data['soft_del'] = 1;
+        $data['updated_at'] =date('Y-m-d H:i:s',time($data));
+        $res = MoneyLog::where('id',$bill_id) -> update($data);
+
+
+        if($res){
+            return $this -> successRequest('操作成功');
+        }
+            
+        $this -> serverError('操作失败');
+        
+    }
+
 }

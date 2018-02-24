@@ -67,5 +67,12 @@ class MoneyLogController extends Controller
         return $todo;
     }
 
+    // 删除
+    public function del(Request $request){
+        $bill_id = $request->bill_id; //账单ID
+        $todo = $this->moneylog->del($bill_id);
+        return $todo;
+    }
+
     
 }

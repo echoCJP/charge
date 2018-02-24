@@ -7,7 +7,7 @@
         <text class="icon-text">{{chooseCate.cate_name}}</text>
       </block>
       <view class="input-content">
-         <input placeholder="请输入金额" name="cost" auto-focus/>
+         <input placeholder="请输入金额" name="cost" value="{{edit_content.cost}}" auto-focus/>
       </view>
   </view>
 
@@ -54,11 +54,17 @@
         <view class="picker">
           <text>备注: </text>
           <view class="beizhu">
-            <input placeholder="备注内容" name="remark"/>  
+            <input placeholder="备注内容" name="remark" value="{{edit_content.remark}}" />  
           </view>
         </view> 
     </view>
-    <view class="btn-area">
+    <view class="btn-area" wx:if="{{id > 0}}">
+      <button form-type="submit" type="primary"> 修改 </button>
+      <button type="warn" bindtap="del" style="margin-top: 20rpx;">删除</button>
+    </view>
+
+
+    <view class="btn-area" wx:else>
       <button form-type="submit" type="primary"> 完成 </button>
       <button form-type="submit" bindtap="addone" style="margin-top: 20rpx;">再记一笔</button>
     </view>
