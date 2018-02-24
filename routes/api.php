@@ -35,5 +35,7 @@ Route::group(['middleware'=>'check.user'],function(){
 Route::get('/mini/session', 'MiniController@getSession');
 Route::post('/mini/syncuser', 'MiniController@syncUser');
 
+Route::any('/wechat/check', 'WeChatController@serve');
+
 
 

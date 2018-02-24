@@ -4,7 +4,14 @@
   
   <view class="top">
       <view>{{sum.month}}月预算余额<text class="iconfont icon-ai44"></text></view>
-      <view class="sum">{{sum.residue_sum}}</view>
+      <view class="sum">
+        <text wx:if="{{sum.residue_sum}}">{{sum.residue_sum}}</text>
+        
+        <view wx:else>
+          <navigator url="/pages/my/my" hover-class="navigator-hover" open-type="switchTab">请设置预算</navigator>
+        </view>
+        
+      </view>
       <view class="count">
           <view class="left">
             <text class="title">{{sum.month}}月收入</text>

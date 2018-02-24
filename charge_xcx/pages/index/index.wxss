@@ -56,7 +56,9 @@
 .right text{
     width: 100%;
     display: block;
-    margin-left: 32rpx;
+    /*margin-left: 32rpx;*/
+    box-sizing: border-box;
+    padding-left: 32rpx;
 }
 
 .bottom-lists{
