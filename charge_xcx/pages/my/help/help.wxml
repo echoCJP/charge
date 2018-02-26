@@ -21,28 +21,4 @@
 
  
 
-  $condition = [];
-
-  if（匹配一）{ 
-    $condition[] = 条件1;
-  }
-  if(匹配二){
-    $condition[] = 条件2;
-  }
-  //eg:
-  //if(address){
-  //   $condition['address'] = "广州";
-  //}
-  //这个可以写成一个函数
-  .....
-
-
-  $condition //数组格式，是一个全部条件，转化成（$address="广州"&&$pici="第一批"）
-  
-
-  for($i=0;$i<data.length;$i++){
-    if($condition){
-        $res = $data[i];
-    }
-  }
 
