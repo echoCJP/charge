@@ -8,7 +8,7 @@
  * @return string 
  */  
 function format_money($money, $len=2, $sign=''){  //$sign='￥'
-    $negative = $money > 0 ? '' : '-';  
+    $negative = $money >= 0 ? '' : '-';  
     $int_money = intval(abs($money));  
     $len = intval(abs($len));  
     $decimal = '';//小数  
