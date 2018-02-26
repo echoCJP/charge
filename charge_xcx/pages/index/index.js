@@ -39,11 +39,12 @@ Page({
   getList(user_id,year=0,month=0){
     app.get('/bill/lists',{user_id:user_id,year:year,month:month},res=>{
       console.log(res)
-      if(res.code == "数据为空"){
-        console.log('2')
+      if(res == "数据为空"){
+        console.log('0')
         this.setData({lists:[]})
       }else{
          this.setData({lists:res})
+         console.log('1')
         
       }
       

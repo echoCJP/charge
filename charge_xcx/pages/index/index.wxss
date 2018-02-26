@@ -1,12 +1,13 @@
 /**index.wxss**/
 .main{
     box-sizing:padding-box;
+    position: relative;
 }
 .icon-mini{
     font-size: 35rpx;
 }
 .choose-time{
-    position: fixed;
+    position: absolute;
     top: 80rpx;
     left: 80rpx;
     width: 60rpx;
