@@ -223,9 +223,9 @@ class MoneyLogRepository extends InitRepository
     public function cateList($type){
         if($type == "income"){
             // 收入图标
-            $data = DB::table('cate') -> whereIn('type', [0, 2])->get();
+            $data = DB::table('cate') -> whereIn('type', [0, 2])->orderBy('sort','desc') ->get();
         }else{
-            $data = DB::table('cate') ->whereIn('type', [0, 1])->get();
+            $data = DB::table('cate') ->whereIn('type', [0, 1])->orderBy('sort','desc')->get();
 
         }
 

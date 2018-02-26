@@ -12,8 +12,6 @@ Page({
   },
   onShow: function (options) {
     
-       console.log(new Date())
-       console.log(new Date().format('yyyy-MM'))
     this.setData({user_id:wx.getStorageSync('userInfo')['id']})
 
     //解决异步请求返回慢的问题,加载全局变量到this.d
@@ -34,20 +32,17 @@ Page({
   getSum(user_id,year=0,month=0){
     app.get('/bill/counts',{user_id:user_id,year:year,month:month},res=>{
       this.setData({sum:res})
-      // console.log(this.data.sum)
+      
     })
   },
   getList(user_id,year=0,month=0){
     app.get('/bill/lists',{user_id:user_id,year:year,month:month},res=>{
-      console.log(res)
       if(res == "数据为空"){
         this.setData({lists:[]})
       }else{
          this.setData({lists:res})
         
       }
-      
-      console.log(this.data.lists)
     })
   },
   bindDateChange: function(e) {

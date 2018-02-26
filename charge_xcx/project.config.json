@@ -45,6 +45,12 @@
 					"name": "setting",
 					"pathName": "pages/my/setting/setting",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "help",
+					"pathName": "pages/my/help/help",
+					"query": ""
 				}
 			]
 		}

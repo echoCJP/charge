@@ -2,7 +2,7 @@
 <scroll-view scroll-x="false">
 <view class="main">
   <view class="choose-time">
-      <picker mode="date" value="{{date}}" fields="year" fields="month" start="1995-04" end="2095-04" bindchange="bindDateChange">
+      <picker mode="date" value="{{sum.now_time}}" fields="year" fields="month" start="1995-04" end="2095-04" bindchange="bindDateChange">
         <image  style="width: 60rpx; height: 60rpx;" src="../../images/setting.png"></image>
       </picker>
   </view>
@@ -12,7 +12,7 @@
         <text wx:if="{{sum.residue_sum}}">{{sum.residue_sum}}</text>
         
         <view wx:else>
-          <navigator url="/pages/my/my" hover-class="navigator-hover" open-type="switchTab">请设置预算</navigator>
+          <navigator url="/pages/my/my" hover-class="none" open-type="switchTab">请设置预算</navigator>
         </view>
         
       </view>
