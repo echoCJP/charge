@@ -12,7 +12,7 @@
     left: 80rpx;
     width: 60rpx;
     height: 60rpx;
-    background-color: red;
+    /*background-color: red;*/
 }
 
 .top{

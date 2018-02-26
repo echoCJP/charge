@@ -2,9 +2,10 @@
 .top{
   background-color: #fff;
   height: 50rpx;
-  width: 100%;
+  /*width: 100%;*/
   padding: 20rpx;
   font-size: 36rpx;
+  /*box-sizing:padding-box;*/
 }
 
 .left{

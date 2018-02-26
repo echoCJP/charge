@@ -177,6 +177,7 @@ class MoneyLogRepository extends InitRepository
         $income_sum = MoneyLog::where($income_where)->sum('cost');
 
         $data = [
+            'now_time' => date('Y-m',time()),
             'budget' =>format_money($budget),
             'cost_sum'=>format_money($cost_sum),
             'residue_sum'=>format_money($residue_sum),

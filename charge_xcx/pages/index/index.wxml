@@ -3,7 +3,7 @@
 <view class="main">
   <view class="choose-time">
       <picker mode="date" value="{{date}}" fields="year" fields="month" start="1995-04" end="2095-04" bindchange="bindDateChange">
-        <image  style="width: 60rpx; height: 60rpx;" src="../../images/logo.jpg"></image>
+        <image  style="width: 60rpx; height: 60rpx;" src="../../images/setting.png"></image>
       </picker>
   </view>
   <view class="top">
