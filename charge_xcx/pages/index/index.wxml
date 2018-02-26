@@ -37,9 +37,9 @@
     <view class="today" wx:key="id" wx:for="{{lists}}" wx:for-index="idx" wx:for-item="td">
         <view class="today-title row">
           <text class="today-title-time">{{td.year}}-{{td.month}}-{{td.day}}</text>
-          <text class="today-title-count">
-             <text>支出:{{td.day_cost_sum}} </text>   
-             <text> 收入:{{td.day_imcome_sum}}</text>
+          <text class="today-title-count">           
+             <text>收入:{{td.day_imcome_sum}}</text>
+             <text>  支出:{{td.day_cost_sum}} </text> 
           </text>
         </view>
 

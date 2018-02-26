@@ -20,6 +20,19 @@ Page({
   onLoad: function (options) {
       if(options.id > 0){
         this.setData({edit_content:options,id:options.id,cate_id:options.cate_id,date:options.time})
+      }else{
+        var todayDate = new Date();
+        var date = todayDate.getDate();
+        var month= todayDate.getMonth() +1;
+        var year= todayDate.getFullYear();
+        // if(month<10){
+        //   month = "0"+month;
+        // }
+
+        // if(date<10){
+        //   date = "0"+date;
+        // }
+        this.setData({date:year+"-"+month+"-"+date})
       }
       
       if(options.cost_type == 1){
