@@ -159,6 +159,7 @@ class MoneyLogRepository extends InitRepository
 
         // 统计已消费
         $where = [
+            'soft_del'=>0,
             'user_id'=>$user_id,
             'year'=>$year,
             'month'=>$month
