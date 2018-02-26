@@ -7,7 +7,7 @@
       </picker>
   </view>
   <view class="top">
-      <view>{{sum.month}}月预算余额<text class="iconfont icon-ai44"></text></view>
+      <view>{{sum.year}}年{{sum.month}}月预算余额<text class="iconfont icon-ai44"></text></view>
       <view class="sum">
         <text wx:if="{{sum.residue_sum}}">{{sum.residue_sum}}</text>
         

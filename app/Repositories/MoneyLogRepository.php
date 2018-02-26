@@ -176,11 +176,20 @@ class MoneyLogRepository extends InitRepository
         $income_where['cost_type'] = 1;
         $income_sum = MoneyLog::where($income_where)->sum('cost');
 
+        // $data = [
+        //     'budget' =>format_money($budget),
+        //     'cost_sum'=>format_money($cost_sum),
+        //     'residue_sum'=>format_money($residue_sum),
+        //     'income_sum'=>format_money($income_sum),
+        //     'year'=>$year,
+        //     'month'=>$month
+        // ];
+
         $data = [
-            'budget' =>format_money($budget),
-            'cost_sum'=>format_money($cost_sum),
-            'residue_sum'=>format_money($residue_sum),
-            'income_sum'=>format_money($income_sum),
+            'budget' =>$budget,
+            'cost_sum'=>$cost_sum,
+            'residue_sum'=>$residue_sum,
+            'income_sum'=>$income_sum,
             'year'=>$year,
             'month'=>$month
         ];
