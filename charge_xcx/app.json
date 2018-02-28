@@ -10,11 +10,11 @@
   "window":{
     "backgroundTextStyle":"light",
     "navigationBarBackgroundColor": "#000",
-    "navigationBarTitleText": "WeChat",
+    "navigationBarTitleText": "来记账吧",
     "navigationBarTextStyle":"white"
   },
   "tabBar": {  
-    "color": "#eee",  
+    "color": "#9B9B9B",  
     "selectedColor": "#1AAD19",  
     "borderStyle": "white" ,
     "list": [{   
